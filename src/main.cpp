@@ -27,7 +27,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <iostream>
 #include <fstream>
 #include <string>
-#include "metronome32/vm.h"
+#include "../metronome32/src/vm.h"
 #include "transforms.h"
 #include "assemble.h"
 namespace maag32 = metroaag32;

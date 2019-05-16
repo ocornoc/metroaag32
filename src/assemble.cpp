@@ -31,9 +31,9 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <functional>
 #include <cstdint>
 #include <utility>
-#include "metronome32/instruction.h"
-#include "metronome32/memory.h"
-#include "metronome32/vm.h"
+#include "../metronome32/src/instruction.h"
+#include "../metronome32/src/memory.h"
+#include "../metronome32/src/vm.h"
 #include "assemble.h"
 #include "transforms.h"
 #include "except.h"

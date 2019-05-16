@@ -26,7 +26,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #include <string>
 #include <vector>
 #include <utility>
-#include <metronome32/instruction.h>
+#include "../metronome32/src/instruction.h"
 
 namespace metroaag32 {
 	namespace patterns {
