@@ -1,0 +1,29 @@
+language: cpp
+
+os:
+  - linux
+  - osx
+
+dist: xenial
+osx_image: xcode10.1
+
+compiler:
+  - gcc
+  - clang
+
+matrix:
+  exclude:
+  - compiler: gcc
+    os: osx
+
+addons:
+  apt:
+    sources:
+    - ubuntu-toolchain-r-test
+    packages:
+    - valgrind
+
+script:
+  - if [ $TRAVIS_OS_NAME = linux ]; then make test_full; fi
+  - if [ $TRAVIS_OS_NAME = linux ]; then make clean; fi
+  - make -j2 coverage
