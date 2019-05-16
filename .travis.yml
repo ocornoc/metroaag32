@@ -24,6 +24,6 @@ addons:
     - valgrind
 
 script:
-  - if [ $TRAVIS_OS_NAME = linux ]; then make test_full; fi
-  - if [ $TRAVIS_OS_NAME = linux ]; then make clean; fi
+  - if [ $TRAVIS_OS_NAME = linux ]; then make -j2 test_full; fi
+  - if [ $TRAVIS_OS_NAME = linux ]; then make -j2 clean; fi
   - make -j2 coverage

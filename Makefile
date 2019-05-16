@@ -13,7 +13,7 @@ CXX_INCLUDE_OPT = -I$(MET32_PATH)/src -L$(MET32_PATH)/build/metronome32.o -I$(SR
 CXXFLAGS = $(CXX_STANDARD_OPT)
 CXXFLAGS += $(CXX_SYMBOLS_OPT)
 CXXFLAGS += $(CXX_OPTIMIZE_OPT)
-CXXFLAGS += $(CXX_NO_OPTIMIZE_OPT)
+#CXXFLAGS += $(CXX_NO_OPTIMIZE_OPT)
 CXXFLAGS += $(CXX_ERRORS_OPT)
 CXXFLAGS += $(CXX_SUGGEST_OPT)
 CXXFLAGS += $(CXX_WARNINGS_OPT)
@@ -52,12 +52,12 @@ test: default $(TEST_PATH)/instr.p32
 	$(BUILD_PATH)/maag32 $(TEST_PATH)/instr.p32
 
 # Same as test except executes it in Valgrind's Memcheck.
-test_memcheck: $(TEST_PATH)/instr.p32
+test_memcheck: default $(TEST_PATH)/instr.p32
 	@echo Testing test program with Valgrind\'s Memcheck
 	$(VALGMC) $(VALGMCFLAGS) $(BUILD_PATH)/maag32 $(TEST_PATH)/instr.p32
 
 # Same as test except executes it in Valgrind's Callgrind.
-test_callgrind: $(TEST_PATH)/instr.p32
+test_callgrind: default $(TEST_PATH)/instr.p32
 	@echo Testing test program with Valgrind\'s Callgrind.
 	$(VALGCLG) $(VALGCLGFLAGS) $(BUILD_PATH)/maag32 $(TEST_PATH)/instr.p32
 
@@ -79,7 +79,7 @@ clean:
 	$(RM_FOLDER) $(DOC_PATH)
 	$(MAKE) -C $(MET32_PATH) clean
 
-.PHONY: default test test_memcheck test_callgrind test_full clean coverage
+.PHONY: doc default test test_memcheck test_callgrind test_full clean coverage
 
 $(BUILD_PATH):
 	$(MKDIR) $(BUILD_PATH)
