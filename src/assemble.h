@@ -23,7 +23,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #ifndef METROAAG32_HEADER_ASSEMBLE
 #define METROAGG32_HEADER_ASSEMBLE
-#include <metronome32/vm.h>
+#include "metronome32/vm.h"
 #include "transforms.h"
 
 namespace metroaag32 {
