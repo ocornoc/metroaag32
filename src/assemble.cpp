@@ -813,9 +813,6 @@ static void assemble_instruction(
 	const label_addr_map& labels,
 	metronome32::context_data& context)
 {
-	std::string first = dir.data.first;
-	std::string second = dir.data.second;
-	
 	if (dir.instr.size() == 0) {
 		return;
 	} else if (r1_new_instr.count(dir.instr) != 0) {
