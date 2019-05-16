@@ -120,6 +120,8 @@ metronome32::vm load_file_and_assemble(const int argc, const char** argv)
 	std::string file_data = get_file_contents(real_path, success);
 	if (not success) error(errmsg::filenonexist);
 	
+	std::cout << "Data:" << std::endl << file_data << std::endl;
+	
 	bool is_valid_source = maag32::consists_of_directives(file_data);
 	if (not is_valid_source) error(errmsg::notsource);
 	
