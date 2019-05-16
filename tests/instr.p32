@@ -1,0 +1,12 @@
+; Returns in %R0 the amount of words in the data section.
+
+data:
+	dw	0xDBDBDBDB, 10
+	dsz	"Hey there!"
+	resw	5
+dataend:
+
+
+_ENTRY:	addi	%R00,	dataend
+	addi	%R01,	data
+	sub	%R00,	%R01

@@ -1,0 +1,3 @@
+[submodule "src/metronome32"]
+	path = metronome32
+	url = https://github.com/ocornoc/metronome32
